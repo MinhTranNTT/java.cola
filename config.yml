@@ -4,6 +4,11 @@ theme: PaperMod
 languageCode: en-us
 #defaultContentLanguage: vi
 
+minify:
+  disableXML: true
+  minifyOutput: true
+
+
 # Custom Articles
 params:
   # homeInfoParams:
@@ -19,10 +24,89 @@ params:
 
   cover:
     linkFullImages: true
-  ShowBreadCrumbs: true
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowReadingTime: true
+    ShowShareButtons: true
+    ShowPostNavLinks: true
+
+# Logo and name shown on top left of site
+  label:
+    text: "Java.Cola"
+    icon: img/attachment_110996634.jpg
+    iconHeight: 35
+
+# favicon
+  assets:
+    favicon: '/favicon/favicon.ico'
+    favicon16x16: '/favicon/favicon-16x16.png'
+    favicon32x32: '/favicon/favicon-32x32.png'
+    apple_touch_icon: '/favicon/apple-touch-icon.png'
+    safari_pinned_tab: '/favicon/apple-touch-icon.png'
+
+
+  # profile-mode
+  profileMode:
+    # Needs to be explicitly set
+    enabled: true
+    title: Java.Cola
+    # I changed this to use HTML instead of Markdown in index_profile.html
+    subtitle: "{Dreams cannot be stolen but ideas can} @ <a href=\"#\"></a> <a href=\"/about\"><ins>More about me</ins></a>"
+    imageUrl: "img/27769271.jpg"
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: Picture of me
+    buttons:
+      - name: Posts
+        url: /posts
+      - name: Tags
+        url: /tags
+      - name: Archives
+        url: /archives
+
+# Source: https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/#search-page
+  fuseOpts:
+      isCaseSensitive: false
+      shouldSort: true
+      location: 0
+      distance: 1000
+      threshold: 0.4
+      minMatchCharLength: 0
+      # keys: ["title", "content"]
+      keys: ["title", "permalink", "summary", "content"]
+
+
+# See https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/#comments
+  # comments: true
+  # hidemeta: false
+  # hideSummary: false
+  showtoc: true
+  tocopen: true
+  # New, from PaperModX
+  TocSide: left
+
+# See markup.tableOfContents for configuration
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false    
+
+# Source: https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/#search-page
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON   
+
+# false means use external CSS file
+  noClasses: false
+  noHl: false        
+
+cover:
+    linkFullImages: true
+    # Hide everywhere but not in structured data
+    hidden: false
+    # Hide in list view
+    hiddenInList: false
+    hiddenInSingle: true    
 
 # Custom HEADER
 menu:
@@ -39,3 +123,35 @@ menu:
       name: Archives
       url: /archives/
       weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+
+markup:
+  tableOfContents:
+    # Without this, Hugo ToC doesn't show h4 and higher
+    # https://github.com/alex-shpak/hugo-book/issues/52
+    endLevel: 6  
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    # highlight.js also doesn't use line numbers by default.
+    # The rationale is that doing so improves readability
+    # (https://highlightjs.readthedocs.io/en/latest/line-numbers.html).
+    # Therefore, I disable it by default.
+    # Note: It's possible to enable it on a specific code block by specifying
+    # ``` {lineNos=true}
+    # ```
+    lineNos: false
+    lineNumbersInTable: true
+    # false means use external CSS file
+    noClasses: false
+    noHl: false
+    # style: monokai
+    tabWidth: 4

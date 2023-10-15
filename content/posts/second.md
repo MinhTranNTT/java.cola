@@ -1,8 +1,10 @@
 ---
-title: "Second"
+title: "Title2"
 date: 2023-10-15T16:51:18+07:00
 draft: false
 ---
+
+Second
 
 ## What is Lorem Ipsum 2?
 
