@@ -32,7 +32,7 @@ params:
 # Logo and name shown on top left of site
   label:
     text: "Java.Cola"
-    icon: img/attachment_110996634.jpg
+    icon: img/kola-logo.jpg
     iconHeight: 35
 
 # favicon
